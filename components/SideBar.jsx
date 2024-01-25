@@ -1,42 +1,48 @@
+'use client'
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import logo from '@/public/assets/images/logo.png'
 import brightnessIcon from '@/public/assets/icons/brightness.svg'
 import moon from '@/public/assets/icons/moon.svg'
-import { Category, TrendUp, Profile2User, Box, DiscountShape, InfoCircle, ArrowCircleRight2, Setting2, Logout } from "iconsax-react"
+import activeIndicator from '@/public/assets/icons/active-indicator.svg'
+import { ArrowCircleRight2, Setting2, Logout } from 'iconsax-react'
+import { barTabs } from "@/lib/data"
 
 
 const SideBar = () => {
+  const path = usePathname();
+ 
+  const tabs = barTabs.map((el) => {
+    const iconColor = path === el.path ? '#0D062D' : '#B2ABAB';
+    
+    return (
+      <Link href={el.path} key={el.id} className="relative flex items-center justify-center w-full"> 
+        <div className="flex justify-center items-center">
+        {React.cloneElement(el.icon, { color: iconColor })} 
+        </div>
+        {
+          path === el.path && 
+          <div className="absolute right-0">
+            <Image src={activeIndicator} alt=""/>
+          </div>
+
+        }
+      </Link>
+    )
+
+  })
+
   return (
     <section className="w-[80px] h-screen border-r border-r-[#EBECF2]">
       <div className="bg-[#F7F8FA] h-full w-full flex items-center justify-between flex-col py-5">
-        <div className="flex items-center flex-col justify-center gap-7">
+        <div className="flex items-center flex-col justify-center gap-7 w-full">
           <Link href='/' className="w-10 h-10">
             <Image src={logo} alt="site logo" className="w-full h-full" />
           </Link>
-          <div className="flex gap-8 flex-col items-center">
-            <Link href='/'>
-              <Category
-                color="#0D062D"
-                variant="Bulk"
-              />
-            </Link>
-            <Link href='/'>
-              <TrendUp color="#B2ABAB" variant="Broken" />
-            </Link>
-            <Link href='/'>
-              <Profile2User color="#B2ABAB" variant="Broken" />
-            </Link>
-            <Link href='/'>
-              <Box color="#B2ABAB" variant="Broken" />
-            </Link>
-            <Link href='/'>
-              <DiscountShape color="#B2ABAB" variant="Broken" />
-            </Link>
-            <Link href='/'>
-              <InfoCircle color="#B2ABAB" variant="Broken" />
-            </Link>
-
+          <div className="flex gap-8 flex-col items-center w-full">
+             {tabs}
           </div>
 
           <div className="bg-white flex flex-col items-center p-2 rounded-[100px]">
