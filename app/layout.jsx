@@ -16,12 +16,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <main className="flex relative">
           <SideBar />
-          <div className="w-full relative">
-            <div className="">
-            <NavBar />
-
-            </div>
-            <div className="h-full w-full flex items-center overflow-y-auto"> 
+          <div className="w-full relative"> 
+              <NavBar /> 
+            <div className="h-full w-full flex items-start overflow-y-auto mt-28">
               {children}
             </div>
           </div>
