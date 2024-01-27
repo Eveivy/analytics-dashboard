@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SideBar from "@/components/SideBar";
 import NavBar from "@/components/NavBar";
+import Providers from "@/lib/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,15 +15,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="flex relative">
-          <SideBar />
-          <div className="w-full relative"> 
-              <NavBar /> 
-            <div className="h-full w-full flex items-start">
-              {children}
+        <Providers>
+          <main className="flex relative bg-[#FAFAFA]">
+            <SideBar />
+            <div className="w-full relative">
+              <NavBar />
+              <div className="h-full w-full flex items-start">
+                {children}
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+
+        </Providers>
       </body>
     </html>
   );

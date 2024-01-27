@@ -1,6 +1,6 @@
 'use client'
 
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Line, Legend } from 'recharts';
+// import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Line, Legend } from 'recharts';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -18,20 +18,7 @@ const data = [
     { month: 'Nov', value: 30000 },
     { month: 'Dec', value: 26000 },
 ];
-const yTicks = [50000, 40000, 30000, 20000, 10000, 5000, 0];
-
-const getPath = (x, y, width, height) => {
-    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
-  ${x + width / 2}, ${y}
-  C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
-  Z`;
-};
-
-const TriangleBar = (props) => {
-    const { fill, x, y, width, height } = props;
-
-    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-};
+ 
  
 
 const SalesChart = () => {
@@ -41,11 +28,11 @@ const SalesChart = () => {
                 <p className="PJS-semibold text-lg leading-6 font-semibold text-[#26282C]">Sales Trends</p>
                 <div className="flex items-center">
                     <label htmlFor="filter" className='text-sm leading-5 text-[#3A3F51] font-medium mr-[10px]'>Short by : </label>
-                    <div class="items-center flex w-24 border border-[#E1DFDF] bg-white rounded-[20px] py-[6px] px-3 ">
+                    <div className="items-center flex w-24 border border-[#E1DFDF] bg-white rounded-[20px] py-[6px] px-3 ">
                         <select name="filter" id="filter" className='appearance-none w-full row-start-1 col-start-1 outline-none text-[#3A3F51] font-normal text-[12px]'>
                             <option value="weekly">Weekly</option>
                         </select>
-                        <svg class="pointer-events-none row-start-1 col-start-1" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <svg className="pointer-events-none row-start-1 col-start-1" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                             <path d="M3.72456 7.14131C3.94645 6.91942 4.29367 6.89925 4.53835 7.0808L4.60845 7.14131L9.99984 12.5324L15.3912 7.14131C15.6131 6.91942 15.9603 6.89925 16.205 7.0808L16.2751 7.14131C16.497 7.3632 16.5172 7.71042 16.3356 7.9551L16.2751 8.02519L10.4418 13.8585C10.2199 14.0804 9.87267 14.1006 9.62799 13.919L9.5579 13.8585L3.72456 8.02519C3.48048 7.78112 3.48048 7.38539 3.72456 7.14131Z" fill="black" />
                         </svg>
                     </div>
@@ -53,7 +40,7 @@ const SalesChart = () => {
                 </div>
             </div>
             <div className="mt-3">
-                <BarChart
+                {/* <BarChart
                     width={820}
                     height={300}
                     data={data}
@@ -74,7 +61,7 @@ const SalesChart = () => {
                         ))}
                          
                     </Bar>
-                </BarChart>
+                </BarChart> */}
             </div>
         </div>
     );

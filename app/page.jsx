@@ -1,7 +1,10 @@
+'use client'
+
 import SalesChart from "@/components/SalesChart";
 import OrdersTable from "@/components/OrdersTable";
 import Statistics from "@/components/Statistics";
 import TopPlatforms from "@/components/TopPlatforms";
+import { ThemeProvider } from "next-themes";
 
 
 export default function Home() {
@@ -16,15 +19,16 @@ export default function Home() {
     //     <TopPlatforms/>
     //   </div>
     // </section>
-    <section className="gap-5 flex px-5 absolute left-[77px] right-0 h-[670px] overflow-y-scroll mt-24 pb-10">
-      <div className="w-[65%] mt-4">
-        <SalesChart />
-        <OrdersTable/>
-      </div>
-      <div className="w-[35%] mt-4">
-        <Statistics/>
-        <TopPlatforms/>
-      </div>
-    </section>
+      <section className="gap-5 flex px-5 absolute left-[77px] right-0 h-[670px] overflow-y-scroll mt-24 pb-10">
+        <div className="w-[65%] mt-4">
+          <SalesChart />
+          <OrdersTable/>
+        </div>
+        <div className="w-[35%] mt-4">
+          <Statistics/>
+          <TopPlatforms/>
+        </div>
+      </section>
+  
   );
 }
