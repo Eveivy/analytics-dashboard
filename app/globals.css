@@ -17,7 +17,26 @@ body {
 }
 .PJS-semibold{
   font-family: 'Plus Jakarta Sans Semibold' !important;
+} 
+
+::-webkit-scrollbar {
+  width: 0.5em;
 }
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* outline: 1px solid #333;  */
+  border-radius: 20px;
+}
+ 
+:hover::-webkit-scrollbar-thumb {
+  background-color: #34caa45c;
+}
+
 
 @layer utilities {
   .text-balance {

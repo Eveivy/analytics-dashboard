@@ -35,7 +35,7 @@ const SideBar = () => {
   })
 
   return (
-    <section className="w-[80px] h-screen border-r border-r-[#EBECF2]">
+    <section className="w-[80px] h-screen border-r border-r-[#EBECF2] fixed">
       <div className="bg-[#F7F8FA] h-full w-full flex items-center justify-between flex-col py-5">
         <div className="flex items-center flex-col justify-center gap-7 w-full">
           <Link href='/' className="w-10 h-10">

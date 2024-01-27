@@ -18,7 +18,7 @@ const OrdersTable = () => {
                     <span className="text-base leading-6 font-normal text-[#737373]">{el.date}</span>
                 </td>
                 <td className="py-4">
-                    <span className="text-base leading-6 font-medium text-[#0D062D]">${el.amount}</span>
+                    <span className="text-base leading-6 font-medium text-[#0D062D]">${el.amount.toLocaleString()}</span>
                 </td>
                 <td className="py-4">
                     {
@@ -37,7 +37,7 @@ const OrdersTable = () => {
         )
     })
     return (
-        <div className="flex-shrink-0 border bg-white border-[#EDF2F7] rounded-[14px] p-5">
+        <div className="flex-shrink-0 border bg-white border-[#EDF2F7] rounded-[14px] p-5 my-6">
             <div className="flex items-center justify-between mb-5">
                 <p className="PJS-semibold text-lg leading-6 font-semibold text-[#26282C]">Last Orders</p>
                 <Link href='/' className="transition ease-in-out delay-75 text-lg leading-6 font-medium text-[#34CAA5] hover:text-[#1c9e6c]">See All</Link>

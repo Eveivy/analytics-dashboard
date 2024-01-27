@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <SideBar />
           <div className="w-full relative"> 
               <NavBar /> 
-            <div className="h-full w-full flex items-start overflow-y-auto mt-28">
+            <div className="h-full w-full flex items-start">
               {children}
             </div>
           </div>
