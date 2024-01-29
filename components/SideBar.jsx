@@ -32,9 +32,9 @@ const SideBar = () => {
     setTheme('dark')
     setMounted(true)
   }
- 
+ console.log(theme)
   const tabs = barTabs.map((el) => {
-    const iconColor = path === el.path ? '#0D062D' : '#B2ABAB';
+    const iconColor = path === el.path && theme === 'dark' ? '#34caa4' : path === el.path ? '#0D062D' : '#B2ABAB';
     
     return (
       <Link href={el.path} key={el.id} className="relative flex items-center justify-center w-full"> 
@@ -54,8 +54,8 @@ const SideBar = () => {
   })
 
   return (
-    <section className="w-[80px] h-screen border-r border-r-[#EBECF2] fixed">
-      <div className="bg-[#F7F8FA] dark:bg-black h-full w-full flex items-center justify-between flex-col py-5">
+    <section className="w-[80px] h-screen border-r border-r-[#EBECF2] dark:border-r-[#0D062D] fixed">
+      <div className="bg-[#F7F8FA] dark:bg-[#0D062D] h-full w-full flex items-center justify-between flex-col py-5">
         <div className="flex items-center flex-col justify-center gap-7 w-full">
           <Link href='/' className="w-10 h-10">
             <Image src={logo} alt="site logo" className="w-full h-full" />

@@ -29,7 +29,7 @@ const SalesChart = () => {
                 <div className="flex items-center">
                     <label htmlFor="filter" className='text-sm leading-5 text-[#3A3F51] font-medium mr-[10px]'>Short by : </label>
                     <div className="items-center flex w-24 border border-[#E1DFDF] bg-white rounded-[20px] py-[6px] px-3 ">
-                        <select name="filter" id="filter" className='appearance-none w-full row-start-1 col-start-1 outline-none text-[#3A3F51] font-normal text-[12px]'>
+                        <select name="filter" id="filter" className='appearance-none dark:bg-white w-full row-start-1 col-start-1 outline-none text-[#3A3F51] font-normal text-[12px]'>
                             <option value="weekly">Weekly</option>
                         </select>
                         <svg className="pointer-events-none row-start-1 col-start-1" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
