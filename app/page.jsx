@@ -19,12 +19,12 @@ export default function Home() {
     //     <TopPlatforms/>
     //   </div>
     // </section>
-      <section className="gap-5 flex px-5 absolute left-[77px] right-0 h-[670px] overflow-y-scroll mt-24 pb-10">
-        <div className="w-[65%] mt-4">
+      <section className="gap-5 flex px-5 absolute md:left-[77px] right-0 h-[670px] overflow-y-scroll mt-24 pb-10">
+        <div className="xl:w-[65%] mt-4">
           <SalesChart />
           <OrdersTable/>
         </div>
-        <div className="w-[35%] mt-4">
+        <div className="xl:w-[35%]  mt-4">
           <Statistics/>
           <TopPlatforms/>
         </div>

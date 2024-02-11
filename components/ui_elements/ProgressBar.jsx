@@ -9,7 +9,7 @@ const ProgressBar = ({ percentage, bgColor }) => {
     }, [percentage]);
 
     return (
-        <div className="w-[452px] h-3 flex-shrink-0 rounded-[40px] bg-[#F5F5F5]">
+        <div className="h-3 flex-shrink-0 rounded-[40px] bg-[#F5F5F5]">
             <div className={`h-3 w-[452px]`}>
                 <div className="rounded-[40px] h-full"
                     style={{
